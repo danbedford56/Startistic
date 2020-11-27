@@ -17,6 +17,7 @@
 		373ABE4B257100DA00A453C4 /* StartisticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE4A257100DA00A453C4 /* StartisticTests.swift */; };
 		373ABE56257100DA00A453C4 /* StartisticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE55257100DA00A453C4 /* StartisticUITests.swift */; };
 		373ABE672571056900A453C4 /* CardifyModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE662571056900A453C4 /* CardifyModifier.swift */; };
+		373ABE7225711B2C00A453C4 /* StartisticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE7125711B2C00A453C4 /* StartisticButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		373ABE55257100DA00A453C4 /* StartisticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartisticUITests.swift; sourceTree = "<group>"; };
 		373ABE57257100DA00A453C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		373ABE662571056900A453C4 /* CardifyModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardifyModifier.swift; sourceTree = "<group>"; };
+		373ABE7125711B2C00A453C4 /* StartisticButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartisticButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		373ABE2F257100D300A453C4 /* Startistic */ = {
 			isa = PBXGroup;
 			children = (
+				373ABE7125711B2C00A453C4 /* StartisticButton.swift */,
 				373ABE30257100D300A453C4 /* AppDelegate.swift */,
 				373ABE32257100D300A453C4 /* SceneDelegate.swift */,
 				373ABE34257100D300A453C4 /* SignInView.swift */,
@@ -275,6 +278,7 @@
 				373ABE31257100D300A453C4 /* AppDelegate.swift in Sources */,
 				373ABE38257100D300A453C4 /* Startistic.xcdatamodeld in Sources */,
 				373ABE33257100D300A453C4 /* SceneDelegate.swift in Sources */,
+				373ABE7225711B2C00A453C4 /* StartisticButton.swift in Sources */,
 				373ABE672571056900A453C4 /* CardifyModifier.swift in Sources */,
 				373ABE35257100D300A453C4 /* SignInView.swift in Sources */,
 			);
