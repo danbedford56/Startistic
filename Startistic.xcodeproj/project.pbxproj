@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		373ABE31257100D300A453C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE30257100D300A453C4 /* AppDelegate.swift */; };
 		373ABE33257100D300A453C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE32257100D300A453C4 /* SceneDelegate.swift */; };
-		373ABE35257100D300A453C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE34257100D300A453C4 /* ContentView.swift */; };
+		373ABE35257100D300A453C4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE34257100D300A453C4 /* SignInView.swift */; };
 		373ABE38257100D300A453C4 /* Startistic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE36257100D300A453C4 /* Startistic.xcdatamodeld */; };
 		373ABE3A257100D900A453C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373ABE39257100D900A453C4 /* Assets.xcassets */; };
 		373ABE3D257100D900A453C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373ABE3C257100D900A453C4 /* Preview Assets.xcassets */; };
 		373ABE40257100D900A453C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373ABE3E257100D900A453C4 /* LaunchScreen.storyboard */; };
 		373ABE4B257100DA00A453C4 /* StartisticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE4A257100DA00A453C4 /* StartisticTests.swift */; };
 		373ABE56257100DA00A453C4 /* StartisticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE55257100DA00A453C4 /* StartisticUITests.swift */; };
+		373ABE672571056900A453C4 /* CardifyModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE662571056900A453C4 /* CardifyModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		373ABE2D257100D300A453C4 /* Startistic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Startistic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		373ABE30257100D300A453C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		373ABE32257100D300A453C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		373ABE34257100D300A453C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		373ABE34257100D300A453C4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		373ABE37257100D300A453C4 /* Startistic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Startistic.xcdatamodel; sourceTree = "<group>"; };
 		373ABE39257100D900A453C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		373ABE3C257100D900A453C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		373ABE51257100DA00A453C4 /* StartisticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StartisticUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		373ABE55257100DA00A453C4 /* StartisticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartisticUITests.swift; sourceTree = "<group>"; };
 		373ABE57257100DA00A453C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		373ABE662571056900A453C4 /* CardifyModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardifyModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,8 @@
 			children = (
 				373ABE30257100D300A453C4 /* AppDelegate.swift */,
 				373ABE32257100D300A453C4 /* SceneDelegate.swift */,
-				373ABE34257100D300A453C4 /* ContentView.swift */,
+				373ABE34257100D300A453C4 /* SignInView.swift */,
+				373ABE662571056900A453C4 /* CardifyModifier.swift */,
 				373ABE39257100D900A453C4 /* Assets.xcassets */,
 				373ABE3E257100D900A453C4 /* LaunchScreen.storyboard */,
 				373ABE41257100D900A453C4 /* Info.plist */,
@@ -272,7 +275,8 @@
 				373ABE31257100D300A453C4 /* AppDelegate.swift in Sources */,
 				373ABE38257100D300A453C4 /* Startistic.xcdatamodeld in Sources */,
 				373ABE33257100D300A453C4 /* SceneDelegate.swift in Sources */,
-				373ABE35257100D300A453C4 /* ContentView.swift in Sources */,
+				373ABE672571056900A453C4 /* CardifyModifier.swift in Sources */,
+				373ABE35257100D300A453C4 /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

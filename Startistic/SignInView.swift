@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SignInView.swift
 //  Startistic
 //
 //  Created by Dan Bedford on 27/11/2020.
