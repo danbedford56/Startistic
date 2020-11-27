@@ -9,66 +9,67 @@ import SwiftUI
 
 struct SignInView: View {
     
-    //MARK: State Variable
+    //MARK: Variable declarations
     
     @State private var username: String = ""
     @State private var password: String = ""
+    @StateObject var viewRouter: ViewRouter
     
     //MARK: Views
-    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 Color.white
                 VStack {
                     Image("Logo3").padding(.bottom, 50)
-                    Text("Sign In").bold().underline().padding(.vertical)
+                    Text("Sign In").underline().padding(.vertical).font(.custom("Philosopher-Bold", size: headerFontSize))
                     Group {
                         Text("Username:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
                         TextField("Enter your username here...", text: $username).padding()
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                         .stroke(lineWidth: textboxRoundedRectangleLineWidth))
-                    
                         Text("Password:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
                         TextField("Enter your password here...", text: $password).padding()
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                         .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                     }
                         .padding(.horizontal)
-                    
+
                     Group {
                         Button(action: {
                             print("Signed in")
-                        }, label: { Text("Sign in") })
-                        .buttonStyle(StartisticButtonStyle(bgColor: backgroundColorRed))
-                        .padding(.top, 100)
+                            viewRouter.currentPage = .userProfilePage
+                        }, label: { Text("Sign in").font(.custom("Philosopher-Regular", size: 25)) })
+                            .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
+                            .padding(.top, 100)
                         
                         Button(action: {
                             print("Signed up")
-                        }, label: { Text("Sign up") })
-                        .buttonStyle(StartisticButtonStyle(bgColor: backgroundColorRed))
-                        .padding(.top, 50)
+                        }, label: { Text("Sign up").font(.custom("Philosopher-Regular", size: 25)) })
+                            .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
+                            .padding(.top, 50)
                     }
                         
                 }
-                    .foregroundColor(foregroundColorRed)
-                    .font(.system(size: fontSize))
+                    .foregroundColor(deepRed)
+                    .font(.custom("Philosopher-Regular" ,size: bodyFontSize))
             }
         }
     }
     
     //MARK: Drawing Constants
-    private let fontSize: CGFloat = 20
+    private let headerFontSize: CGFloat = 30
+    private let bodyFontSize: CGFloat = 20
     private let textFrameWidth: CGFloat = 385
     private let textFrameHeight: CGFloat = 30
     private let textboxRoundedRectangleCornerRadius: CGFloat = 10
     private let textboxRoundedRectangleLineWidth: CGFloat = 2
-    private let backgroundColorRed: Color = Color(red: 166/255, green: 0/255, blue: 0/255)
-    private let foregroundColorRed: Color = Color(red: 166/255, green: 0/255, blue: 0/255)
+    private let deepRed: Color = Color(red: 166/255, green: 0/255, blue: 0/255)
+
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(viewRouter: ViewRouter())
     }
 }

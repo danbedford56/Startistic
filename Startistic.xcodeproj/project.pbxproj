@@ -18,6 +18,17 @@
 		373ABE56257100DA00A453C4 /* StartisticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE55257100DA00A453C4 /* StartisticUITests.swift */; };
 		373ABE672571056900A453C4 /* CardifyModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE662571056900A453C4 /* CardifyModifier.swift */; };
 		373ABE7225711B2C00A453C4 /* StartisticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE7125711B2C00A453C4 /* StartisticButton.swift */; };
+		373ABE7A25713F3D00A453C4 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE7925713F3C00A453C4 /* UserProfileView.swift */; };
+		373ABE7F2571445C00A453C4 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE7E2571445C00A453C4 /* MasterView.swift */; };
+		373ABE842571450E00A453C4 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE832571450E00A453C4 /* NavigationHelper.swift */; };
+		373ABE8E25714CDE00A453C4 /* Philosopher-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 373ABE8A25714CDC00A453C4 /* Philosopher-Italic.ttf */; };
+		373ABE8F25714CDE00A453C4 /* Philosopher-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 373ABE8B25714CDD00A453C4 /* Philosopher-BoldItalic.ttf */; };
+		373ABE9025714CDE00A453C4 /* Philosopher-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 373ABE8C25714CDD00A453C4 /* Philosopher-Bold.ttf */; };
+		373ABE9125714CDE00A453C4 /* Philosopher-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 373ABE8D25714CDE00A453C4 /* Philosopher-Regular.ttf */; };
+		373ABE96257157C600A453C4 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE95257157C600A453C4 /* ActivityView.swift */; };
+		373ABE9B2571580800A453C4 /* NewOpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE9A2571580800A453C4 /* NewOpView.swift */; };
+		373ABEA02571586200A453C4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE9F2571586100A453C4 /* SearchView.swift */; };
+		373ABEA5257158C800A453C4 /* MyOpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABEA4257158C800A453C4 /* MyOpsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +66,17 @@
 		373ABE57257100DA00A453C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		373ABE662571056900A453C4 /* CardifyModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardifyModifier.swift; sourceTree = "<group>"; };
 		373ABE7125711B2C00A453C4 /* StartisticButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartisticButton.swift; sourceTree = "<group>"; };
+		373ABE7925713F3C00A453C4 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = SOURCE_ROOT; };
+		373ABE7E2571445C00A453C4 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
+		373ABE832571450E00A453C4 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		373ABE8A25714CDC00A453C4 /* Philosopher-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Philosopher-Italic.ttf"; sourceTree = "<group>"; };
+		373ABE8B25714CDD00A453C4 /* Philosopher-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Philosopher-BoldItalic.ttf"; sourceTree = "<group>"; };
+		373ABE8C25714CDD00A453C4 /* Philosopher-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Philosopher-Bold.ttf"; sourceTree = "<group>"; };
+		373ABE8D25714CDE00A453C4 /* Philosopher-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Philosopher-Regular.ttf"; sourceTree = "<group>"; };
+		373ABE95257157C600A453C4 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		373ABE9A2571580800A453C4 /* NewOpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOpView.swift; sourceTree = "<group>"; };
+		373ABE9F2571586100A453C4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		373ABEA4257158C800A453C4 /* MyOpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOpsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +127,18 @@
 		373ABE2F257100D300A453C4 /* Startistic */ = {
 			isa = PBXGroup;
 			children = (
+				373ABE8925714CA500A453C4 /* Fonts */,
 				373ABE7125711B2C00A453C4 /* StartisticButton.swift */,
 				373ABE30257100D300A453C4 /* AppDelegate.swift */,
 				373ABE32257100D300A453C4 /* SceneDelegate.swift */,
 				373ABE34257100D300A453C4 /* SignInView.swift */,
+				373ABE95257157C600A453C4 /* ActivityView.swift */,
+				373ABE9A2571580800A453C4 /* NewOpView.swift */,
+				373ABE9F2571586100A453C4 /* SearchView.swift */,
+				373ABE7E2571445C00A453C4 /* MasterView.swift */,
+				373ABE832571450E00A453C4 /* NavigationHelper.swift */,
+				373ABEA4257158C800A453C4 /* MyOpsView.swift */,
+				373ABE7925713F3C00A453C4 /* UserProfileView.swift */,
 				373ABE662571056900A453C4 /* CardifyModifier.swift */,
 				373ABE39257100D900A453C4 /* Assets.xcassets */,
 				373ABE3E257100D900A453C4 /* LaunchScreen.storyboard */,
@@ -143,6 +173,17 @@
 				373ABE57257100DA00A453C4 /* Info.plist */,
 			);
 			path = StartisticUITests;
+			sourceTree = "<group>";
+		};
+		373ABE8925714CA500A453C4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				373ABE8C25714CDD00A453C4 /* Philosopher-Bold.ttf */,
+				373ABE8B25714CDD00A453C4 /* Philosopher-BoldItalic.ttf */,
+				373ABE8A25714CDC00A453C4 /* Philosopher-Italic.ttf */,
+				373ABE8D25714CDE00A453C4 /* Philosopher-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,8 +289,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373ABE9125714CDE00A453C4 /* Philosopher-Regular.ttf in Resources */,
 				373ABE40257100D900A453C4 /* LaunchScreen.storyboard in Resources */,
+				373ABE9025714CDE00A453C4 /* Philosopher-Bold.ttf in Resources */,
+				373ABE8F25714CDE00A453C4 /* Philosopher-BoldItalic.ttf in Resources */,
 				373ABE3D257100D900A453C4 /* Preview Assets.xcassets in Resources */,
+				373ABE8E25714CDE00A453C4 /* Philosopher-Italic.ttf in Resources */,
 				373ABE3A257100D900A453C4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,11 +320,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373ABE7A25713F3D00A453C4 /* UserProfileView.swift in Sources */,
 				373ABE31257100D300A453C4 /* AppDelegate.swift in Sources */,
+				373ABE7F2571445C00A453C4 /* MasterView.swift in Sources */,
+				373ABE96257157C600A453C4 /* ActivityView.swift in Sources */,
+				373ABEA02571586200A453C4 /* SearchView.swift in Sources */,
 				373ABE38257100D300A453C4 /* Startistic.xcdatamodeld in Sources */,
 				373ABE33257100D300A453C4 /* SceneDelegate.swift in Sources */,
 				373ABE7225711B2C00A453C4 /* StartisticButton.swift in Sources */,
+				373ABEA5257158C800A453C4 /* MyOpsView.swift in Sources */,
+				373ABE9B2571580800A453C4 /* NewOpView.swift in Sources */,
 				373ABE672571056900A453C4 /* CardifyModifier.swift in Sources */,
+				373ABE842571450E00A453C4 /* NavigationHelper.swift in Sources */,
 				373ABE35257100D300A453C4 /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
