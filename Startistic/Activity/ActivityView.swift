@@ -14,16 +14,12 @@ struct ActivityView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                VStack {
-                    ForEach(activityViewModel.users) { user in
-                        Text("\(user.username)")
-                    }
-                }
+                
                 NavBar(viewRouter: viewRouter, yPos: geometry.size.height, xPos: geometry.size.width)
             }
         }
         .onAppear() { // (3)
-            self.activityViewModel.fetchData()
+            //self.activityViewModel.fetchData()
         }
     }
 }

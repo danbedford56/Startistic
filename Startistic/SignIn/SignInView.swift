@@ -14,6 +14,7 @@ struct SignInView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @StateObject var viewRouter: ViewRouter
+    @StateObject var signInViewModel: SignInViewModel = SignInViewModel()
     
     //MARK: Views
     var body: some View {
@@ -38,6 +39,7 @@ struct SignInView: View {
                     Group {
                         Button(action: {
                             print("Signed in")
+                            signInViewModel.create_user()
                             viewRouter.currentPage = .userProfilePage
                         }, label: { Text("Sign In").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
