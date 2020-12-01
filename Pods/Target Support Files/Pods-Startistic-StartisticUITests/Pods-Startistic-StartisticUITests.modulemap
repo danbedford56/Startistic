@@ -1,0 +1,6 @@
+framework module Pods_Startistic_StartisticUITests {
+  umbrella header "Pods-Startistic-StartisticUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
