@@ -15,6 +15,7 @@ enum Page {
     case newOpPage
     case searchPage
     case myOpsPage
+    case signUpPage
 }
 
 class ViewRouter: ObservableObject {

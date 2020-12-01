@@ -29,6 +29,7 @@
 		373ABE9B2571580800A453C4 /* NewOpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE9A2571580800A453C4 /* NewOpView.swift */; };
 		373ABEA02571586200A453C4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE9F2571586100A453C4 /* SearchView.swift */; };
 		373ABEA5257158C800A453C4 /* MyOpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABEA4257158C800A453C4 /* MyOpsView.swift */; };
+		CE6C642725767DDF000383D3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C642625767DDF000383D3 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		373ABE9A2571580800A453C4 /* NewOpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOpView.swift; sourceTree = "<group>"; };
 		373ABE9F2571586100A453C4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		373ABEA4257158C800A453C4 /* MyOpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOpsView.swift; sourceTree = "<group>"; };
+		CE6C642625767DDF000383D3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				373ABE30257100D300A453C4 /* AppDelegate.swift */,
 				373ABE32257100D300A453C4 /* SceneDelegate.swift */,
 				373ABE34257100D300A453C4 /* SignInView.swift */,
+				CE6C642625767DDF000383D3 /* SignUpView.swift */,
 				373ABE95257157C600A453C4 /* ActivityView.swift */,
 				373ABE9A2571580800A453C4 /* NewOpView.swift */,
 				373ABE9F2571586100A453C4 /* SearchView.swift */,
@@ -330,6 +333,7 @@
 				373ABE7225711B2C00A453C4 /* StartisticButton.swift in Sources */,
 				373ABEA5257158C800A453C4 /* MyOpsView.swift in Sources */,
 				373ABE9B2571580800A453C4 /* NewOpView.swift in Sources */,
+				CE6C642725767DDF000383D3 /* SignUpView.swift in Sources */,
 				373ABE672571056900A453C4 /* CardifyModifier.swift in Sources */,
 				373ABE842571450E00A453C4 /* NavigationHelper.swift in Sources */,
 				373ABE35257100D300A453C4 /* SignInView.swift in Sources */,

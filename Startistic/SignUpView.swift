@@ -1,18 +1,19 @@
 //
-//  SignInView.swift
+//  SignUpView.swift
 //  Startistic
 //
-//  Created by Dan Bedford on 27/11/2020.
+//  Created by Morris, Jack Liam (J.) on 01/12/2020.
 //
 
 import SwiftUI
 
-struct SignInView: View {
+struct SignUpView: View {
     
     //MARK: Variable declarations
     
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var passwordConfirm: String = ""
     @StateObject var viewRouter: ViewRouter
     
     //MARK: Views
@@ -22,7 +23,7 @@ struct SignInView: View {
                 Color.white
                 VStack {
                     Image("StartisticLogo").padding(.bottom, 50)
-                    Text("Sign In").underline().padding(.vertical).font(.custom("Philosopher-Bold", size: headerFontSize))
+                    Text("Sign Up").underline().padding(.vertical).font(.custom("Philosopher-Bold", size: headerFontSize))
                     Group {
                         Text("Username:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
                         TextField("Enter your username here...", text: $username).padding()
@@ -32,25 +33,21 @@ struct SignInView: View {
                         TextField("Enter your password here...", text: $password).padding()
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                         .stroke(lineWidth: textboxRoundedRectangleLineWidth))
+                        Text("Confirm Password:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
+                        TextField("Enter your password here...", text: $passwordConfirm).padding()
+                            .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
+                                        .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                     }
                         .padding(.horizontal)
 
                     Group {
                         Button(action: {
-                            print("Signed in")
-                            viewRouter.currentPage = .userProfilePage
-                        }, label: { Text("Sign in").font(.custom("Philosopher-Regular", size: 25)) })
-                            .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
-                            .padding(.top, 100)
-                        
-                        Button(action: {
                             print("Signed up")
-                            viewRouter.currentPage = .signUpPage
+                            viewRouter.currentPage = .userProfilePage
                         }, label: { Text("Sign up").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
                             .padding(.top, 50)
                     }
-                        
                 }
                     .foregroundColor(deepRed)
                     .font(.custom("Philosopher-Regular" ,size: bodyFontSize))
@@ -69,8 +66,8 @@ struct SignInView: View {
 
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(viewRouter: ViewRouter())
+        SignUpView(viewRouter: ViewRouter())
     }
 }
