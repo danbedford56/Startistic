@@ -18,7 +18,7 @@ struct MasterView: View {
         case .userProfilePage:
             UserProfileView(viewRouter: viewRouter)
         case .activityPage:
-            ActivityView()
+            ActivityView(viewRouter: viewRouter)
         case .newOpPage:
             NewOpView()
         case .searchPage:
