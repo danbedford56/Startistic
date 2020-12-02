@@ -31,12 +31,14 @@
 		373ABEA5257158C800A453C4 /* MyOpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABEA4257158C800A453C4 /* MyOpsView.swift */; };
 		375F38F325767C3500322180 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F38F225767C3500322180 /* ActivityViewModel.swift */; };
 		375F38FB25767C9700322180 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375F38FA25767C9700322180 /* User.swift */; };
-		376AF5882576733200793B37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 376AF5872576733200793B37 /* GoogleService-Info.plist */; };
-		376AF5892576733200793B37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 376AF5872576733200793B37 /* GoogleService-Info.plist */; };
-		376AF58A2576733200793B37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 376AF5872576733200793B37 /* GoogleService-Info.plist */; };
 		82C5B18AC1FD1DCBCE85DD4F /* Pods_Startistic_StartisticUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C4514A5D9708C65B98DE5 /* Pods_Startistic_StartisticUITests.framework */; };
+		8FB0F6EB25768CBB009C694C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0F6EA25768CBB009C694C /* Activity.swift */; };
 		9A60FCC83E5797D80D1DB033 /* Pods_StartisticTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9099B9B3EE30BEB4EAFA854 /* Pods_StartisticTests.framework */; };
 		C89D3612E2F5402034ADE427 /* Pods_Startistic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59A239CCA26FBBB2111FB0C /* Pods_Startistic.framework */; };
+		CE40F661257697FF00C16DCF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE40F660257697FF00C16DCF /* GoogleService-Info.plist */; };
+		CE40F6682576985500C16DCF /* signUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40F6672576985500C16DCF /* signUpView.swift */; };
+		CE40F67025769CEC00C16DCF /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40F66F25769CEC00C16DCF /* Database.swift */; };
+		CE40F67525769D2C00C16DCF /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40F67425769D2C00C16DCF /* SignUpViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,13 +90,17 @@
 		373ABEA4257158C800A453C4 /* MyOpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOpsView.swift; sourceTree = "<group>"; };
 		375F38F225767C3500322180 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		375F38FA25767C9700322180 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		376AF5872576733200793B37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		388106E1EC96D3ACE844C065 /* Pods-Startistic-StartisticUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startistic-StartisticUITests.debug.xcconfig"; path = "Target Support Files/Pods-Startistic-StartisticUITests/Pods-Startistic-StartisticUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E62A23D6411AD4D4F3C6181 /* Pods-Startistic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startistic.release.xcconfig"; path = "Target Support Files/Pods-Startistic/Pods-Startistic.release.xcconfig"; sourceTree = "<group>"; };
 		6A6E7E653A13E31CAFFE6AC4 /* Pods-StartisticTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartisticTests.release.xcconfig"; path = "Target Support Files/Pods-StartisticTests/Pods-StartisticTests.release.xcconfig"; sourceTree = "<group>"; };
+		8FB0F6EA25768CBB009C694C /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = ../Models/Activity.swift; sourceTree = "<group>"; };
 		AA812637166BBB9FD2B81124 /* Pods-Startistic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startistic.debug.xcconfig"; path = "Target Support Files/Pods-Startistic/Pods-Startistic.debug.xcconfig"; sourceTree = "<group>"; };
 		B9099B9B3EE30BEB4EAFA854 /* Pods_StartisticTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StartisticTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3A464D7C4D1C925DF5BF2D /* Pods-StartisticTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartisticTests.debug.xcconfig"; path = "Target Support Files/Pods-StartisticTests/Pods-StartisticTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE40F660257697FF00C16DCF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE40F6672576985500C16DCF /* signUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpView.swift; sourceTree = "<group>"; };
+		CE40F66F25769CEC00C16DCF /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		CE40F67425769D2C00C16DCF /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		E455D4C956D503125B29E810 /* Pods-Startistic-StartisticUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startistic-StartisticUITests.release.xcconfig"; path = "Target Support Files/Pods-Startistic-StartisticUITests/Pods-Startistic-StartisticUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E59A239CCA26FBBB2111FB0C /* Pods_Startistic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Startistic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,6 +158,7 @@
 		373ABE2F257100D300A453C4 /* Startistic */ = {
 			isa = PBXGroup;
 			children = (
+				CE40F6652576983800C16DCF /* SignUp */,
 				375F39082576804A00322180 /* NewOp */,
 				375F39072576803700322180 /* MyOps */,
 				375F39062576802A00322180 /* Profile */,
@@ -167,7 +174,7 @@
 				373ABE39257100D900A453C4 /* Assets.xcassets */,
 				373ABE3E257100D900A453C4 /* LaunchScreen.storyboard */,
 				373ABE41257100D900A453C4 /* Info.plist */,
-				376AF5872576733200793B37 /* GoogleService-Info.plist */,
+				CE40F660257697FF00C16DCF /* GoogleService-Info.plist */,
 				373ABE36257100D300A453C4 /* Startistic.xcdatamodeld */,
 				373ABE3B257100D900A453C4 /* Preview Content */,
 			);
@@ -214,6 +221,7 @@
 		375F38F125767C1B00322180 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				8FB0F6EA25768CBB009C694C /* Activity.swift */,
 				373ABE95257157C600A453C4 /* ActivityView.swift */,
 				375F38F225767C3500322180 /* ActivityViewModel.swift */,
 			);
@@ -250,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				375F38FA25767C9700322180 /* User.swift */,
+				CE40F66F25769CEC00C16DCF /* Database.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +285,15 @@
 				373ABE9A2571580800A453C4 /* NewOpView.swift */,
 			);
 			path = NewOp;
+			sourceTree = "<group>";
+		};
+		CE40F6652576983800C16DCF /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				CE40F6672576985500C16DCF /* signUpView.swift */,
+				CE40F67425769D2C00C16DCF /* SignUpViewModel.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		D7DA2543ED192A3C706CFB58 /* Pods */ = {
@@ -410,7 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				373ABE9125714CDE00A453C4 /* Philosopher-Regular.ttf in Resources */,
-				376AF5882576733200793B37 /* GoogleService-Info.plist in Resources */,
+				CE40F661257697FF00C16DCF /* GoogleService-Info.plist in Resources */,
 				373ABE40257100D900A453C4 /* LaunchScreen.storyboard in Resources */,
 				373ABE9025714CDE00A453C4 /* Philosopher-Bold.ttf in Resources */,
 				373ABE8F25714CDE00A453C4 /* Philosopher-BoldItalic.ttf in Resources */,
@@ -424,7 +442,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				376AF5892576733200793B37 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +449,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				376AF58A2576733200793B37 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,7 +567,10 @@
 				375F38F325767C3500322180 /* ActivityViewModel.swift in Sources */,
 				373ABE7F2571445C00A453C4 /* MasterView.swift in Sources */,
 				373ABE96257157C600A453C4 /* ActivityView.swift in Sources */,
+				CE40F67525769D2C00C16DCF /* SignUpViewModel.swift in Sources */,
 				373ABEA02571586200A453C4 /* SearchView.swift in Sources */,
+				CE40F67025769CEC00C16DCF /* Database.swift in Sources */,
+				8FB0F6EB25768CBB009C694C /* Activity.swift in Sources */,
 				373ABE38257100D300A453C4 /* Startistic.xcdatamodeld in Sources */,
 				373ABE33257100D300A453C4 /* SceneDelegate.swift in Sources */,
 				375F38FB25767C9700322180 /* User.swift in Sources */,
@@ -561,6 +580,7 @@
 				373ABE672571056900A453C4 /* CardifyModifier.swift in Sources */,
 				373ABE842571450E00A453C4 /* NavigationHelper.swift in Sources */,
 				373ABE35257100D300A453C4 /* SignInView.swift in Sources */,
+				CE40F6682576985500C16DCF /* signUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

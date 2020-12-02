@@ -21,7 +21,7 @@ struct SignInView: View {
             ZStack {
                 Color.white
                 VStack {
-                    Image("Logo3").padding(.bottom, 50)
+                    Image("Logo").padding(.bottom, 50)
                     Text("Sign In").underline().padding(.vertical).font(.custom("Philosopher-Bold", size: headerFontSize))
                     Group {
                         Text("Username:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
@@ -39,13 +39,14 @@ struct SignInView: View {
                         Button(action: {
                             print("Signed in")
                             viewRouter.currentPage = .userProfilePage
-                        }, label: { Text("Sign in").font(.custom("Philosopher-Regular", size: 25)) })
+                        }, label: { Text("Sign In").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
                             .padding(.top, 100)
                         
                         Button(action: {
                             print("Signed up")
-                        }, label: { Text("Sign up").font(.custom("Philosopher-Regular", size: 25)) })
+                            viewRouter.currentPage = .signUpPage
+                        }, label: { Text("Sign Up").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
                             .padding(.top, 50)
                     }

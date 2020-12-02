@@ -20,11 +20,13 @@ struct MasterView: View {
         case .activityPage:
             ActivityView(viewRouter: viewRouter)
         case .newOpPage:
-            NewOpView()
+            NewOpView(viewRouter: viewRouter)
         case .searchPage:
-            SearchView()
+            SearchView(viewRouter: viewRouter)
         case .myOpsPage:
-            MyOpsView()
+            MyOpsView(viewRouter: viewRouter)
+        case .signUpPage:
+           SignUpView(viewRouter: viewRouter, signUpViewModel: SignUpViewModel())
         }
     }
 }
