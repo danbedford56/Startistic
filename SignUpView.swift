@@ -33,7 +33,7 @@ struct SignUpView: View {
                           .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                 .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         Text("Confirm Password:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
-                        TextField("Enter your password here...", text: $passwordConfirm).padding()
+                        TextField("Enter your password here...", text: $signUpViewModel.confirmed_password).padding()
                           .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                 .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         
@@ -47,11 +47,12 @@ struct SignUpView: View {
                         .padding(.horizontal)
                     Group {
                         Button(action: {
-                            print("Signed up")
-                            signUpViewModel.create_user()
-                            if signUpViewModel.valid_account {
-                                viewRouter.currentPage = .userProfilePage
+                            let logInHandler:() -> Void = {
+                                if signUpViewModel.valid_account {
+                                    viewRouter.currentPage = .userProfilePage
+                                }
                             }
+                            signUpViewModel.create_user(logInHandler: logInHandler)
                         }, label: { Text("Sign Up").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
                             .padding(.top, 50)

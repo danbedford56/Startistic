@@ -4,7 +4,6 @@
 //
 //  Created by Dan Bedford on 27/11/2020.
 //
-
 import SwiftUI
 
 struct MasterView: View {
@@ -20,11 +19,11 @@ struct MasterView: View {
         case .activityPage:
             ActivityView(viewRouter: viewRouter)
         case .newOpPage:
-            NewOpView()
+            NewOpView(viewRouter: viewRouter)
         case .searchPage:
-            SearchView()
+            SearchView(viewRouter: viewRouter)
         case .myOpsPage:
-            MyOpsView()
+            MyOpsView(viewRouter: viewRouter)
         case .signUpPage:
             SignUpView(signUpViewModel: SignUpViewModel(), viewRouter: viewRouter)
         }
