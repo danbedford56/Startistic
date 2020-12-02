@@ -31,6 +31,36 @@ class Database {
         }
     }
     
+    static func fetch_portfolios(completionHandler: @escaping (_ data: Array<Portfolio>) -> ()) {
+        var dataArray: Array<Portfolio> = []
+        
+        db.collection("portfolios").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+
+            dataArray = documents.map { queryDocumentSnapshot -> Portfolio in
+                let data = queryDocumentSnapshot.data()
+                let id = queryDocumentSnapshot.documentID
+                let user_id = data["user_id"] as? String ?? ""
+                let post = data["post1"] as? String ?? ""
+                return Portfolio(id: id, user_id: user_id, post: post)
+            }
+            completionHandler(dataArray)
+        }
+    }
+    
+    static func get_portfolio(user_id: String, completionHandler: @escaping (_ data: Portfolio) -> ()) {
+        fetch_portfolios() { dataArray in
+            for portfolio in dataArray {
+                if portfolio.user_id == user_id {
+                    completionHandler(portfolio)
+                }
+            }
+        }
+    }
+    
     static func create_user(_ user: [String : Any]) {
         var ref: DocumentReference? = nil
         ref = db.collection("users").addDocument(data: user) { err in
