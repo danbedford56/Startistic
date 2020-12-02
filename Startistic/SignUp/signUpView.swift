@@ -20,8 +20,8 @@ struct SignUpView: View {
             ZStack {
                 Color.white
                 VStack {
-                    Image("Logo").padding(.bottom, 50)
-                    Text("Sign Up").underline().padding(.vertical).font(.custom("Philosopher-Bold", size: headerFontSize))
+                    Image("Logo").padding(.bottom, 25)
+                    Text("Sign Up").underline().padding(.top, 5).font(.custom("Philosopher-Bold", size: headerFontSize))
                     Group {
                         Text("Username:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
                         TextField("Enter your username here...", text: $signUpViewModel.username).padding()
@@ -35,24 +35,27 @@ struct SignUpView: View {
                         TextField("Enter your password here...", text: $signUpViewModel.confirmed_password).padding()
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                             .stroke(lineWidth: textboxRoundedRectangleLineWidth))
-                        if signUpViewModel.unmatched {
-                            Text("Passwords do not match")
-                        }
-                        if signUpViewModel.username_taken {
-                            Text("This username is already taken 😢")
-                        }
+                        VStack {
+                            if signUpViewModel.unmatched {
+                                Text("Passwords do not match")
+                            }
+                            if signUpViewModel.username_taken {
+                                Text("This username is already taken 😢")
+                            }
+                        }.frame(width: 370, height: 100, alignment: .top).padding(5)
+                        
                     }
                         .padding(.horizontal)
                   Group {
                     Button(action: {
-                        print("Signed up")
-                            signUpViewModel.create_user()
-                        if signUpViewModel.valid_account == true {
-                            viewRouter.currentPage = .userProfilePage
+                        let logInHandler:() -> Void = {
+                            if signUpViewModel.valid_account {
+                                viewRouter.currentPage = .userProfilePage
+                            }
                         }
+                        signUpViewModel.create_user(logInHandler: logInHandler)
                         }, label: { Text("Sign Up").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
-                            .padding(.top, 50)
                             .padding(.bottom, 25)
                     Text("Already have an account?").frame(width: textFrameWidth, height: textFrameHeight, alignment: .center)
                     Button(action: {

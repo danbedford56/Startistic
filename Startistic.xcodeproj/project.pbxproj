@@ -39,6 +39,8 @@
 		CE40F6682576985500C16DCF /* signUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40F6672576985500C16DCF /* signUpView.swift */; };
 		CE40F67025769CEC00C16DCF /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40F66F25769CEC00C16DCF /* Database.swift */; };
 		CE40F67525769D2C00C16DCF /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40F67425769D2C00C16DCF /* SignUpViewModel.swift */; };
+		CEDE141F2577B33200918245 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDE141E2577B33200918245 /* UserProfileViewModel.swift */; };
+		CEDE14272577D6A900918245 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDE14262577D6A900918245 /* SignInViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		CE40F6672576985500C16DCF /* signUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpView.swift; sourceTree = "<group>"; };
 		CE40F66F25769CEC00C16DCF /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		CE40F67425769D2C00C16DCF /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		CEDE141E2577B33200918245 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		CEDE14262577D6A900918245 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		E455D4C956D503125B29E810 /* Pods-Startistic-StartisticUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startistic-StartisticUITests.release.xcconfig"; path = "Target Support Files/Pods-Startistic-StartisticUITests/Pods-Startistic-StartisticUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E59A239CCA26FBBB2111FB0C /* Pods_Startistic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Startistic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -158,6 +162,7 @@
 		373ABE2F257100D300A453C4 /* Startistic */ = {
 			isa = PBXGroup;
 			children = (
+				375F390225767FD900322180 /* SignIn */,
 				CE40F6652576983800C16DCF /* SignUp */,
 				375F39082576804A00322180 /* NewOp */,
 				375F39072576803700322180 /* MyOps */,
@@ -165,7 +170,6 @@
 				375F39052576801500322180 /* Models */,
 				375F39042576800100322180 /* Search */,
 				375F390325767FE700322180 /* Views and Mods */,
-				375F390225767FD900322180 /* SignIn */,
 				375F38F125767C1B00322180 /* Activity */,
 				373ABE8925714CA500A453C4 /* Fonts */,
 				373ABE30257100D300A453C4 /* AppDelegate.swift */,
@@ -232,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				373ABE34257100D300A453C4 /* SignInView.swift */,
+				CEDE14262577D6A900918245 /* SignInViewModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				373ABE7925713F3C00A453C4 /* UserProfileView.swift */,
+				CEDE141E2577B33200918245 /* UserProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -570,6 +576,7 @@
 				CE40F67525769D2C00C16DCF /* SignUpViewModel.swift in Sources */,
 				373ABEA02571586200A453C4 /* SearchView.swift in Sources */,
 				CE40F67025769CEC00C16DCF /* Database.swift in Sources */,
+				CEDE14272577D6A900918245 /* SignInViewModel.swift in Sources */,
 				8FB0F6EB25768CBB009C694C /* Activity.swift in Sources */,
 				373ABE38257100D300A453C4 /* Startistic.xcdatamodeld in Sources */,
 				373ABE33257100D300A453C4 /* SceneDelegate.swift in Sources */,
@@ -579,6 +586,7 @@
 				373ABE9B2571580800A453C4 /* NewOpView.swift in Sources */,
 				373ABE672571056900A453C4 /* CardifyModifier.swift in Sources */,
 				373ABE842571450E00A453C4 /* NavigationHelper.swift in Sources */,
+				CEDE141F2577B33200918245 /* UserProfileViewModel.swift in Sources */,
 				373ABE35257100D300A453C4 /* SignInView.swift in Sources */,
 				CE40F6682576985500C16DCF /* signUpView.swift in Sources */,
 			);

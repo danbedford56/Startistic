@@ -10,9 +10,7 @@ import SwiftUI
 struct SignInView: View {
     
     //MARK: Variable declarations
-    
-    @State private var username: String = ""
-    @State private var password: String = ""
+    @ObservedObject var signInViewModel : SignInViewModel
     @StateObject var viewRouter: ViewRouter
     
     //MARK: Views
@@ -21,30 +19,38 @@ struct SignInView: View {
             ZStack {
                 Color.white
                 VStack {
-                    Image("Logo").padding(.bottom, 50)
-                    Text("Sign In").underline().padding(.vertical).font(.custom("Philosopher-Bold", size: headerFontSize))
+                    Image("Logo").padding(.bottom, 25)
+                    Text("Sign In").underline().padding(.top, 5).font(.custom("Philosopher-Bold", size: headerFontSize))
                     Group {
                         Text("Username:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
-                        TextField("Enter your username here...", text: $username).padding()
+                        TextField("Enter your username here...", text: $signInViewModel.username).padding()
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                         .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         Text("Password:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
-                        TextField("Enter your password here...", text: $password).padding()
+                        TextField("Enter your password here...", text: $signInViewModel.password).padding()
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                         .stroke(lineWidth: textboxRoundedRectangleLineWidth))
+                        ZStack {
+                            if signInViewModel.invalid_details {
+                                Text("Username or password incorrect!")
+                            }
+                        }
+                        .frame(width: 370, height: 70, alignment: .top).padding(5)
                     }
                         .padding(.horizontal)
 
                     Group {
                         Button(action: {
-                            print("Signed in")
-                            viewRouter.currentPage = .userProfilePage
+                            let logInHandler:() -> Void = {
+                                viewRouter.currentUser = signInViewModel.username
+                                viewRouter.currentPage = .userProfilePage
+                            }
+                            signInViewModel.check_login_details(logInHandler: logInHandler)
                         }, label: { Text("Sign In").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
-                            .padding(.top, 100)
+                            .padding(.top, 50)
                         
                         Button(action: {
-                            print("Signed up")
                             viewRouter.currentPage = .signUpPage
                         }, label: { Text("Sign Up").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
@@ -71,6 +77,6 @@ struct SignInView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(viewRouter: ViewRouter())
+        SignInView(signInViewModel: SignInViewModel(), viewRouter: ViewRouter())
     }
 }

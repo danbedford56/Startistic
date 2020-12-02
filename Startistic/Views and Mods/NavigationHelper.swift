@@ -21,7 +21,7 @@ enum Page {
 class ViewRouter: ObservableObject {
     
     @Published var currentPage: Page = .signInPage
-    
+    @Published var currentUser: String?
 }
 
 struct NavBar : View {
