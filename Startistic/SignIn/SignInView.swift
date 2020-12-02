@@ -45,6 +45,7 @@ struct SignInView: View {
                         
                         Button(action: {
                             print("Signed up")
+                            viewRouter.currentPage = .signUpPage
                         }, label: { Text("Sign up").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
                             .padding(.top, 50)

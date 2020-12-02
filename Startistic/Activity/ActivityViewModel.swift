@@ -6,26 +6,22 @@
 //
 
 import Foundation
-import FirebaseFirestore
+
 
 class ActivityViewModel: ObservableObject {
-    @Published var users = [User]()
+    @Published private var model: Activity = ActivityViewModel.createActivity()
     
-    private var db = Firestore.firestore()
+    private static func createActivity() -> Activity {
+        let content = [["front","back"], ["front2", "back2"],["front3", "back3"],["front4", "back4"],["front5", "back5"]]
+        return Activity(num_of_posts: content.count, content: content)
+    }
     
-    func fetchData() {
-        db.collection("users").addSnapshotListener { (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else {
-                print("No documents")
-                return
-            }
-
-            self.users = documents.map { queryDocumentSnapshot -> User in
-                let data = queryDocumentSnapshot.data()
-                let username = data["username"] as? String ?? ""
-
-                return User(id: .init(), username: username)
-            }
-        }
+    var posts: Array<Activity.Post> {
+        model.posts
+    }
+    
+    func choose(post: Activity.Post) {
+        model.choose(post: post)
+        
     }
 }
