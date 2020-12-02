@@ -10,9 +10,7 @@ import SwiftUI
 struct SignInView: View {
     
     //MARK: Variable declarations
-    
-    @State private var username: String = ""
-    @State private var password: String = ""
+    @ObservedObject var signInViewModel: SignInViewModel
     @StateObject var viewRouter: ViewRouter
     
     //MARK: Views
@@ -25,11 +23,11 @@ struct SignInView: View {
                     Text("Sign In").underline().padding(.vertical).font(.custom("Philosopher-Bold", size: headerFontSize))
                     Group {
                         Text("Username:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
-                        TextField("Enter your username here...", text: $username).padding()
+                        TextField("Enter your username here...", text: $signInViewModel.username).padding()
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                         .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         Text("Password:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
-                        TextField("Enter your password here...", text: $password).padding()
+                        TextField("Enter your password here...", text: $signInViewModel.password).padding()
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                         .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                     }
@@ -37,8 +35,12 @@ struct SignInView: View {
 
                     Group {
                         Button(action: {
-                            print("Signed in")
-                            viewRouter.currentPage = .userProfilePage
+                            let logInHandler:() -> Void = {
+                                viewRouter.currentUser = signInViewModel.username
+                                viewRouter.currentPage = .userProfilePage
+                            }
+                            signInViewModel.check_login_details(logInHandler: logInHandler)
+                            
                         }, label: { Text("Sign in").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
                             .padding(.top, 100)
@@ -71,6 +73,6 @@ struct SignInView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(viewRouter: ViewRouter())
+        SignInView(signInViewModel: SignInViewModel(), viewRouter: ViewRouter())
     }
 }

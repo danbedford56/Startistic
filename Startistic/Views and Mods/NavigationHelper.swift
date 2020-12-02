@@ -19,14 +19,14 @@ enum Page {
 }
 
 class ViewRouter: ObservableObject {
-    
     @Published var currentPage: Page = .signInPage
-    
+    @Published var currentUser: String?
 }
 
 struct NavBar : View {
     
     @StateObject var viewRouter: ViewRouter
+    
     var yPos: CGFloat
     var xPos: CGFloat
     
@@ -51,7 +51,7 @@ struct NavBar : View {
                 }, label: { Image(systemName: "person.fill").font(.system(size: iconSize)) })
             }
         }
-        .position(x: xPos*xMultiplier, y: yPos - 15)
+        .position(x: xPos * xMultiplier, y: yPos - 15)
         .foregroundColor(.black)
     }
     

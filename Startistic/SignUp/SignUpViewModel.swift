@@ -36,6 +36,9 @@ class SignUpViewModel : ObservableObject {
             if self.username_taken == false && self.password == self.confirmed_password && self.username != "" && self.password != "" {
                 self.valid_account = true
                 Database.create_user(["username" : self.username, "password" : self.password])
+                self.username = ""
+                self.password = ""
+                self.confirmed_password = ""
             } else if self.password != self.confirmed_password {
                 self.unmatched = true
             }

@@ -14,7 +14,7 @@ struct MasterView: View {
     var body: some View {
         switch viewRouter.currentPage {
         case .signInPage:
-            SignInView(viewRouter: viewRouter)
+            SignInView(signInViewModel: SignInViewModel(), viewRouter: viewRouter)
         case .userProfilePage:
             UserProfileView(viewRouter: viewRouter)
         case .activityPage:
