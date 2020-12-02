@@ -10,8 +10,8 @@ import SwiftUI
 struct UserProfileView: View {
 
     @StateObject var viewRouter: ViewRouter
-    @ObservedObject var userProfileViewModel = UserProfileViewModel()
-
+    @ObservedObject var userProfileViewModel: UserProfileViewModel
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack (alignment: .top) {
@@ -29,22 +29,23 @@ struct UserProfileView: View {
                     }
                     
                     Text("Sign Out").position(x: 40, y: 10).frame(width:400, height: 20)
-                    Text("Profile Page").underline().font(.custom("Philosopher-Bold", size: headerFontSize))
                     if viewRouter.currentUser != nil {
-                        Text("Welcome \(viewRouter.currentUser!)")
+                        Text("\(viewRouter.currentUser!)'s Profile").underline().font(.custom("Philosopher-Bold", size: headerFontSize))
                     }
-                    ScrollView {
-                        VStack {
-                            ForEach(userProfileViewModel.posts) { post in
-                                PostView(post: post ).padding().onTapGesture {
-                                    withAnimation(.linear) {
-                                        userProfileViewModel.choose(post: post)
+                    if userProfileViewModel.posts != nil {
+                        ScrollView {
+                            VStack {
+                                ForEach(userProfileViewModel.posts!) { post in
+                                    PostView(post: post ).padding().onTapGesture {
+                                        withAnimation(.linear) {
+                                            //userProfileViewModel.choose(post: post)
+                                        }
                                     }
                                 }
+                            .padding()
                             }
-                        .padding()
-                        }
-                    }.frame(width: 300, height: 500, alignment: .center)
+                        }.frame(width: 300, height: 500, alignment: .center)
+                    }
                 }
                 NavBar(viewRouter: viewRouter, yPos: geometry.size.height, xPos: geometry.size.width)
             }
@@ -61,6 +62,6 @@ struct UserProfileView: View {
 
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileView(viewRouter: ViewRouter())
+        UserProfileView(viewRouter: ViewRouter(), userProfileViewModel: UserProfileViewModel())
     }
 }

@@ -16,7 +16,10 @@ struct MasterView: View {
         case .signInPage:
             SignInView(signInViewModel: SignInViewModel(), viewRouter: viewRouter)
         case .userProfilePage:
-            UserProfileView(viewRouter: viewRouter)
+            let view = UserProfileView(viewRouter: viewRouter, userProfileViewModel: UserProfileViewModel())
+            view.onAppear{
+                view.userProfileViewModel.get_posts()
+            }
         case .activityPage:
             ActivityView(viewRouter: viewRouter)
         case .newOpPage:

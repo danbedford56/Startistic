@@ -13,6 +13,7 @@
 		370952342577B9D900F308A2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370952332577B9D900F308A2 /* SignInViewModel.swift */; };
 		370952392577E6EE00F308A2 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370952382577E6EE00F308A2 /* PostView.swift */; };
 		3709523E2577E71100F308A2 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3709523D2577E71100F308A2 /* UserProfileViewModel.swift */; };
+		370952432578025500F308A2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370952422578025500F308A2 /* Post.swift */; };
 		373ABE31257100D300A453C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE30257100D300A453C4 /* AppDelegate.swift */; };
 		373ABE33257100D300A453C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE32257100D300A453C4 /* SceneDelegate.swift */; };
 		373ABE35257100D300A453C4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE34257100D300A453C4 /* SignInView.swift */; };
@@ -73,6 +74,7 @@
 		370952332577B9D900F308A2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		370952382577E6EE00F308A2 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		3709523D2577E71100F308A2 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		370952422578025500F308A2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		373ABE2D257100D300A453C4 /* Startistic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Startistic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		373ABE30257100D300A453C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		373ABE32257100D300A453C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				375F38FA25767C9700322180 /* User.swift */,
 				8FB0F6EA25768CBB009C694C /* Activity.swift */,
 				3709522E2576A0EC00F308A2 /* Database.swift */,
+				370952422578025500F308A2 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				373ABEA02571586200A453C4 /* SearchView.swift in Sources */,
 				8FB0F6EB25768CBB009C694C /* Activity.swift in Sources */,
 				373ABE38257100D300A453C4 /* Startistic.xcdatamodeld in Sources */,
+				370952432578025500F308A2 /* Post.swift in Sources */,
 				373ABE33257100D300A453C4 /* SceneDelegate.swift in Sources */,
 				375F38FB25767C9700322180 /* User.swift in Sources */,
 				373ABE7225711B2C00A453C4 /* StartisticButton.swift in Sources */,

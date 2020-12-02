@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct PostView: View {
-    var post: Activity.Post
+    var post: Post
     
     var body: some View {
         GeometryReader { geometry in

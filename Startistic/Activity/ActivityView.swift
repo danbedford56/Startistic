@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ActivityView: View {
-    @ObservedObject var activityViewModel = ActivityViewModel()
+    //@ObservedObject var activityViewModel = ActivityViewModel()
     @StateObject var viewRouter: ViewRouter
     
     var body: some View {
