@@ -4,7 +4,6 @@
 //
 //  Created by Dan Bedford on 01/12/2020.
 //
-
 import Foundation
 import FirebaseFirestore
 
@@ -12,7 +11,7 @@ class Database {
     
     private static var db = Firestore.firestore()
     
-    static func fetch_users() -> Array<User> {
+    static func fetch_users(completionHandler: @escaping (_ data: Array<User>) -> ()) {
         var dataArray: Array<User> = []
         db.collection("users").addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
@@ -23,19 +22,22 @@ class Database {
             dataArray = documents.map { queryDocumentSnapshot -> User in
                 let data = queryDocumentSnapshot.data()
                 let username = data["username"] as? String ?? ""
-
                 return User(id: .init(), username: username)
             }
+            completionHandler(dataArray)
         }
-        return dataArray
     }
     
     static func create_user(_ user: [String : Any]) {
-        do {
-            let _ = try db.collection("users").addDocument(data: user)
-        } catch {
-          print(error)
+        var ref: DocumentReference? = nil
+        ref = db.collection("users").addDocument(data: user) { err in
+            if err != nil {
+                print("Error adding user")
+            } else {
+                print("Added user")
+            }
         }
+        
     }
     
     

@@ -12,7 +12,7 @@ class ActivityViewModel: ObservableObject {
     @Published private var model: Activity = ActivityViewModel.createActivity()
     
     private static func createActivity() -> Activity {
-        let content = [["front","back"], ["front2", "back2"],["front3", "back3"],["front4", "back4"],["front5", "back5"]]
+        let content = [["front","back"], ["front2", "back2"],["front3", "back3"],["front4", "back4"],["front5", "back5"],["front5", "back5"],["front5", "back5"],["front5", "back5"],["front5", "back5"],["front5", "back5"],["front5", "back5"],["front5", "back5"]]
         return Activity(num_of_posts: content.count, content: content)
     }
     

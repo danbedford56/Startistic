@@ -13,7 +13,6 @@ struct ActivityView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            
             ZStack {
                 ScrollView {
                     VStack {
@@ -21,9 +20,10 @@ struct ActivityView: View {
                             PostView(post: post ).padding().onTapGesture {
                                 withAnimation(.linear) {
                                     activityViewModel.choose(post: post)
+
                                 }
                                 
-                            }
+                            }.padding(.bottom)
                         }.padding()
                     }
                 }.foregroundColor(Color.red)
@@ -41,7 +41,7 @@ struct PostView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack{
+            VStack{
                 if post.isFaceUp {
                     Text(post.face_up_content as! String)
                         .font(Font.system(size: min(geometry.size.width, geometry.size.height)*fontScaleFactor))
@@ -56,6 +56,7 @@ struct PostView: View {
                 }
             }.cardify(isFaceUp: post.isFaceUp)
             .transition(AnyTransition.scale)
+            .padding(.bottom)
         
         }
         

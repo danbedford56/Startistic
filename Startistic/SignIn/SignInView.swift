@@ -21,7 +21,7 @@ struct SignInView: View {
             ZStack {
                 Color.white
                 VStack {
-                    Image("Logo3").padding(.bottom, 50)
+                    Image("Logo").padding(.bottom, 50)
                     Text("Sign In").underline().padding(.vertical).font(.custom("Philosopher-Bold", size: headerFontSize))
                     Group {
                         Text("Username:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)

@@ -39,8 +39,6 @@
 		8FB0F6E2257688DC009C694C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FB0F6E0257688DC009C694C /* GoogleService-Info.plist */; };
 		8FB0F6E3257688DC009C694C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FB0F6E0257688DC009C694C /* GoogleService-Info.plist */; };
 		8FB0F6EB25768CBB009C694C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0F6EA25768CBB009C694C /* Activity.swift */; };
-		8FB0F6EC25768CBB009C694C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0F6EA25768CBB009C694C /* Activity.swift */; };
-		8FB0F6ED25768CBB009C694C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0F6EA25768CBB009C694C /* Activity.swift */; };
 		9A60FCC83E5797D80D1DB033 /* Pods_StartisticTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9099B9B3EE30BEB4EAFA854 /* Pods_StartisticTests.framework */; };
 		C89D3612E2F5402034ADE427 /* Pods_Startistic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59A239CCA26FBBB2111FB0C /* Pods_Startistic.framework */; };
 /* End PBXBuildFile section */
@@ -101,7 +99,7 @@
 		5E62A23D6411AD4D4F3C6181 /* Pods-Startistic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startistic.release.xcconfig"; path = "Target Support Files/Pods-Startistic/Pods-Startistic.release.xcconfig"; sourceTree = "<group>"; };
 		6A6E7E653A13E31CAFFE6AC4 /* Pods-StartisticTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartisticTests.release.xcconfig"; path = "Target Support Files/Pods-StartisticTests/Pods-StartisticTests.release.xcconfig"; sourceTree = "<group>"; };
 		8FB0F6E0257688DC009C694C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8FB0F6EA25768CBB009C694C /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		8FB0F6EA25768CBB009C694C /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = ../Models/Activity.swift; sourceTree = "<group>"; };
 		AA812637166BBB9FD2B81124 /* Pods-Startistic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startistic.debug.xcconfig"; path = "Target Support Files/Pods-Startistic/Pods-Startistic.debug.xcconfig"; sourceTree = "<group>"; };
 		B9099B9B3EE30BEB4EAFA854 /* Pods_StartisticTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StartisticTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3A464D7C4D1C925DF5BF2D /* Pods-StartisticTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartisticTests.debug.xcconfig"; path = "Target Support Files/Pods-StartisticTests/Pods-StartisticTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +232,7 @@
 		375F38F125767C1B00322180 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				8FB0F6EA25768CBB009C694C /* Activity.swift */,
 				373ABE95257157C600A453C4 /* ActivityView.swift */,
 				375F38F225767C3500322180 /* ActivityViewModel.swift */,
 			);
@@ -270,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				375F38FA25767C9700322180 /* User.swift */,
-				8FB0F6EA25768CBB009C694C /* Activity.swift */,
 				3709522E2576A0EC00F308A2 /* Database.swift */,
 			);
 			path = Models;
@@ -594,7 +592,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FB0F6EC25768CBB009C694C /* Activity.swift in Sources */,
 				373ABE4B257100DA00A453C4 /* StartisticTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,7 +600,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FB0F6ED25768CBB009C694C /* Activity.swift in Sources */,
 				373ABE56257100DA00A453C4 /* StartisticUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

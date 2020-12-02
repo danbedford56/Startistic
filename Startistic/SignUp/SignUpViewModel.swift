@@ -1,10 +1,10 @@
+
 //
 //  SignUpViewModel.swift
 //  Startistic
 //
 //  Created by Dan Bedford on 01/12/2020.
 //
-
 import Foundation
 import SwiftUI
 
@@ -15,31 +15,34 @@ class SignUpViewModel : ObservableObject {
     @Published var confirmed_password : String = ""
     @Published var unmatched : Bool = false
     @Published var username_taken : Bool = false
-    var valid_account: Bool = false
+    @Published var valid_account : Bool = false
+    
     
     func create_user() {
-        username_taken = check_username_existing()
-        unmatched = false
-        if password == confirmed_password && !username_taken, username != "" && password != "" {
-            Database.create_user(["username" : username, "password" : password])
-        }else if password != confirmed_password {
-            unmatched = true
-        }
+        validate_account_details()
     }
-    private func check_username_existing() -> Bool{
-        var taken: Bool = false
-        DispatchQueue.global(qos: .userInitiated).async {
-            if let users = try? Database.fetch_users() {
-                DispatchQueue.main.async {
-                    for user in users {
-                        if user.username == self.username {
-                            taken =  true
-                        }
-                    }
+    
+    private func validate_account_details() {
+        // Pulling the user data from the database
+        Database.fetch_users() { dataArray in
+            // Checks username against other users
+            self.username_taken = false
+            for user in dataArray {
+                if user.username == self.username {
+                    self.username_taken = true
+                    break
                 }
             }
+            
+            //Validates the account details
+            self.unmatched = false
+            if !self.username_taken, self.password == self.confirmed_password, self.username != "" && self.password != "" {
+                self.unmatched = false
+                self.valid_account = true
+                Database.create_user(["username" : self.username, "password" : self.password])
+            } else if self.password != self.confirmed_password {
+                self.unmatched = true
+            }
         }
-        return taken
-       
     }
 }
