@@ -44,11 +44,12 @@ struct SignUpView: View {
                         .padding(.horizontal)
                     Group {
                         Button(action: {
-                            print("Signed up")
-                            signUpViewModel.create_user()
-                            if signUpViewModel.valid_account {
-                                viewRouter.currentPage = .userProfilePage
+                            let logInHandler:() -> Void = {
+                                if signUpViewModel.valid_account {
+                                    viewRouter.currentPage = .userProfilePage
+                                }
                             }
+                            signUpViewModel.create_user(logInHandler: logInHandler)
                         }, label: { Text("Sign Up").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
                             .padding(.top, 50)

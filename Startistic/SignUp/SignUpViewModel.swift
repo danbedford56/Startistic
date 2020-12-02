@@ -17,12 +17,7 @@ class SignUpViewModel : ObservableObject {
     @Published var username_taken : Bool = false
     @Published var valid_account : Bool = false
     
-    
-    func create_user() {
-        validate_account_details()
-    }
-    
-    private func validate_account_details() {
+    func create_user(logInHandler: @escaping () -> Void) {
         // Pulling the user data from the database
         Database.fetch_users() { dataArray in
             // Checks username against other users
@@ -35,14 +30,17 @@ class SignUpViewModel : ObservableObject {
             }
             
             //Validates the account details
+            print(self.username_taken)
             self.unmatched = false
-            if !self.username_taken, self.password == self.confirmed_password, self.username != "" && self.password != "" {
-                self.unmatched = false
+            
+            if self.username_taken == false && self.password == self.confirmed_password && self.username != "" && self.password != "" {
                 self.valid_account = true
                 Database.create_user(["username" : self.username, "password" : self.password])
             } else if self.password != self.confirmed_password {
                 self.unmatched = true
             }
+            
+            logInHandler()
         }
     }
 }
