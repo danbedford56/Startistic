@@ -15,19 +15,26 @@ struct ActivityView: View {
         GeometryReader { geometry in
             ZStack {
                 VStack {
-                    ForEach(activityViewModel.users) { user in
-                        Text("\(user.username)")
-                    }
+                    
                 }
                 NavBar(viewRouter: viewRouter, yPos: geometry.size.height, xPos: geometry.size.width)
             }
         }
-        .onAppear() { // (3)
-            self.activityViewModel.fetchData()
-        }
     }
 }
 
+//struct PostView: View {
+//    var post: Activity.Post
+//
+//    var body: some View {
+//        if post.isFaceUp {
+//                Text(post.face_up_content)
+//            }
+//            .cardify(isFaceUp: post.isFaceUp)
+//            .transition(AnyTransition.scale)
+//    }
+//}
+    
 struct ActivityView_Previews: PreviewProvider {
     static var previews: some View {
         ActivityView(viewRouter: ViewRouter())

@@ -25,6 +25,8 @@ struct MasterView: View {
             SearchView()
         case .myOpsPage:
             MyOpsView()
+        case .signUpPage:
+            SignUpView(signUpViewModel: SignUpViewModel(), viewRouter: viewRouter)
         }
     }
 }
