@@ -8,7 +8,8 @@
 import Foundation
 
 struct User: Identifiable {
-    var id: String = UUID().uuidString
+    
+    var id: String
     var username: String
     var password: String
 }

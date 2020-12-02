@@ -22,24 +22,31 @@ struct Cardify: AnimatableModifier {
     }
     
     init(isFaceUp: Bool) {
-        rotation = isFaceUp ? 0 : 180
+        rotation = isFaceUp ? 0 : 360
     }
     
     func body(content: Content) -> some View {
         ZStack {
             Group {
-                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
-                RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
-                content
+                if isFaceUp {
+                    RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).scaledToFill()
+                    RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth).scaledToFill()
+                    content
+                }
+            
+                else {
+                    RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
+                    RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
+                    content
+                }
             }
-                .opacity(isFaceUp ? 1 : 0)
-            RoundedRectangle(cornerRadius: cornerRadius).fill()
-                .opacity(isFaceUp ? 0 : 1)
+                    
         }
             .rotation3DEffect(
                 Angle.degrees(rotation),
                 axis: (x: 0.0, y: 1.0, z: 0.0)
             )
+            .padding(.bottom)
     }
     
     // MARK: Drawing constants

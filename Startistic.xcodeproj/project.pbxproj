@@ -11,6 +11,8 @@
 		3709522A2576A0A000F308A2 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370952292576A0A000F308A2 /* SignUpViewModel.swift */; };
 		3709522F2576A0EC00F308A2 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3709522E2576A0EC00F308A2 /* Database.swift */; };
 		370952342577B9D900F308A2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370952332577B9D900F308A2 /* SignInViewModel.swift */; };
+		370952392577E6EE00F308A2 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370952382577E6EE00F308A2 /* PostView.swift */; };
+		3709523E2577E71100F308A2 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3709523D2577E71100F308A2 /* UserProfileViewModel.swift */; };
 		373ABE31257100D300A453C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE30257100D300A453C4 /* AppDelegate.swift */; };
 		373ABE33257100D300A453C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE32257100D300A453C4 /* SceneDelegate.swift */; };
 		373ABE35257100D300A453C4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ABE34257100D300A453C4 /* SignInView.swift */; };
@@ -69,6 +71,8 @@
 		370952292576A0A000F308A2 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		3709522E2576A0EC00F308A2 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		370952332577B9D900F308A2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		370952382577E6EE00F308A2 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		3709523D2577E71100F308A2 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		373ABE2D257100D300A453C4 /* Startistic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Startistic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		373ABE30257100D300A453C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		373ABE32257100D300A453C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 				373ABE662571056900A453C4 /* CardifyModifier.swift */,
 				373ABE832571450E00A453C4 /* NavigationHelper.swift */,
 				373ABE7125711B2C00A453C4 /* StartisticButton.swift */,
+				370952382577E6EE00F308A2 /* PostView.swift */,
 			);
 			path = "Views and Mods";
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				373ABE7925713F3C00A453C4 /* UserProfileView.swift */,
+				3709523D2577E71100F308A2 /* UserProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -576,8 +582,10 @@
 				375F38F325767C3500322180 /* ActivityViewModel.swift in Sources */,
 				373ABE7F2571445C00A453C4 /* MasterView.swift in Sources */,
 				370952342577B9D900F308A2 /* SignInViewModel.swift in Sources */,
+				3709523E2577E71100F308A2 /* UserProfileViewModel.swift in Sources */,
 				3709522A2576A0A000F308A2 /* SignUpViewModel.swift in Sources */,
 				373ABE96257157C600A453C4 /* ActivityView.swift in Sources */,
+				370952392577E6EE00F308A2 /* PostView.swift in Sources */,
 				373ABEA02571586200A453C4 /* SearchView.swift in Sources */,
 				8FB0F6EB25768CBB009C694C /* Activity.swift in Sources */,
 				373ABE38257100D300A453C4 /* Startistic.xcdatamodeld in Sources */,
