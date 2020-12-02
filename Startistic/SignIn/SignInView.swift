@@ -43,6 +43,7 @@ struct SignInView: View {
                         Button(action: {
                             let logInHandler:() -> Void = {
                                 viewRouter.currentUser = signInViewModel.username
+                                viewRouter.currentID = signInViewModel.id
                                 viewRouter.currentPage = .userProfilePage
                             }
                             signInViewModel.check_login_details(logInHandler: logInHandler)

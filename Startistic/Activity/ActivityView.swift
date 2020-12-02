@@ -33,36 +33,6 @@ struct ActivityView: View {
     }
 }
 
-struct PostView: View {
-    var post: Activity.Post
-    
-    var body: some View {
-        GeometryReader { geometry in
-            ZStack{
-                if post.isFaceUp {
-                    Text(post.face_up_content as! String)
-                        .font(Font.system(size: min(geometry.size.width, geometry.size.height)*fontScaleFactor))
-                        .foregroundColor(Color.black)
-                        .padding()
-                }
-                else{
-                    Text(post.face_down_content as! String)
-                        .font(Font.system(size: min(geometry.size.width, geometry.size.height)*fontScaleFactor))
-                        .foregroundColor(Color.black)
-                        .padding()
-                }
-            }.cardify(isFaceUp: post.isFaceUp)
-            .transition(AnyTransition.scale)
-        
-        }
-        
-        
-    }
-    private let fontScaleFactor: CGFloat = 1.5
-
-}
-
-
 struct ActivityView_Previews: PreviewProvider {
     static var previews: some View {
         ActivityView(viewRouter: ViewRouter())

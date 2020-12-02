@@ -26,10 +26,21 @@ struct UserProfileView: View {
                                     .font(.system(size: iconSize))
                             }
                         )
-                            .padding(.trailing, 275)
+                        .padding(.trailing, 110)
+                        
+                        Button(action: {
+                            viewRouter.currentPage = .newPortfolioPostPage
+                        },
+                            label: {
+                                Image(systemName: "plus")
+                                    .font(.system(size: iconSize))
+                            }
+                        )
+                        .padding(.trailing, 110)
                         
                         Button(action: {
                                 viewRouter.currentPage = .activityPage
+                            // TODO: Change this to go to a settings page when ready
                         },
                             label: {
                                 Image(systemName: "gearshape.fill")
@@ -37,13 +48,20 @@ struct UserProfileView: View {
                             }
                         )
                     }
-                    Text("Sign Out").position(x: 40, y: 10).frame(width:400, height: 20)
-                    
-                    Text("Profile Page").underline().font(.custom("Philosopher-Bold", size: headerFontSize))
-                    HStack {
-                        Text("Welcome ")
-                        Text("Jack") // TODO Name will need to be linked to the DB.
+                    HStack{
+//                        Text("Sign Out").position(x: 40, y: 10).frame(width:400, height: 20)
+                        Text("Sign Out")
+                            .padding(.trailing, 40)
+                        Text("New Portfolio Post")
+                            .padding(.trailing, 40)
+                        Text("Settings")
                     }
+                    .padding(.bottom, 15)
+                    
+                    if viewRouter.currentUser != nil {
+                        Text("\(viewRouter.currentUser!)'s Profile").underline().font(.custom("Philosopher-Bold", size: headerFontSize))
+                    }
+                    
                     ScrollView {
                         VStack {
                             ForEach(userProfileViewModel.posts) { post in
@@ -55,7 +73,7 @@ struct UserProfileView: View {
                             }
                         .padding()
                         }
-                    }.frame(width: 300, height: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }.frame(width: 385, height: 550, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
                 NavBar(viewRouter: viewRouter, yPos: geometry.size.height, xPos: geometry.size.width)
             }
@@ -68,31 +86,6 @@ struct UserProfileView: View {
     private let bodyFontSize: CGFloat = 20
     let iconSize: CGFloat = 40
     private let deepRed: Color = Color(red: 166/255, green: 0/255, blue: 0/255)
-}
-
-struct UserPostsView: View {
-    var post: Activity.Post
-    
-    var body: some View {
-        GeometryReader { geometry in
-            ZStack{
-                if post.isFaceUp {
-                    Text(post.face_up_content as! String)
-                        .font(Font.system(size: min(geometry.size.width, geometry.size.height)*fontScaleFactor))
-                        .foregroundColor(Color.black)
-                        .padding()
-                }
-                else{
-                    Text(post.face_down_content as! String)
-                        .font(Font.system(size: min(geometry.size.width, geometry.size.height)*fontScaleFactor))
-                        .foregroundColor(Color.black)
-                        .padding()
-                }
-            }.cardify(isFaceUp: post.isFaceUp)
-            .transition(AnyTransition.scale)
-        }
-    }
-    private let fontScaleFactor: CGFloat = 1.5
 }
 
 struct UserProfileView_Previews: PreviewProvider {

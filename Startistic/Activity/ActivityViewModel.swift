@@ -8,7 +8,7 @@
 import Foundation
 
 class ActivityViewModel: ObservableObject {
-    @Published private var model: Activity = ActivityViewModel.createActivity()
+    @Published private var ActivityModel: Activity = ActivityViewModel.createActivity()
     
     private static func createActivity() -> Activity {
         let content = [["front","back"], ["front2", "back2"],["front3", "back3"],["front4", "back4"],["front5", "back5"]]
@@ -16,11 +16,11 @@ class ActivityViewModel: ObservableObject {
     }
     
     var posts: Array<Activity.Post> {
-        model.posts
+        ActivityModel.posts
     }
     
     func choose(post: Activity.Post) {
-        model.choose(post: post)
+        ActivityModel.choose(post: post)
         
     }
 }

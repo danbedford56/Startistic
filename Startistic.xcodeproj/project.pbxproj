@@ -41,6 +41,8 @@
 		CE40F67525769D2C00C16DCF /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40F67425769D2C00C16DCF /* SignUpViewModel.swift */; };
 		CEDE141F2577B33200918245 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDE141E2577B33200918245 /* UserProfileViewModel.swift */; };
 		CEDE14272577D6A900918245 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDE14262577D6A900918245 /* SignInViewModel.swift */; };
+		CEDE142C2577E9E700918245 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDE142B2577E9E700918245 /* PostView.swift */; };
+		CEDE14322577F68700918245 /* NewPortfolioPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDE14312577F68700918245 /* NewPortfolioPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		CE40F67425769D2C00C16DCF /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		CEDE141E2577B33200918245 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		CEDE14262577D6A900918245 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		CEDE142B2577E9E700918245 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		CEDE14312577F68700918245 /* NewPortfolioPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPortfolioPost.swift; sourceTree = "<group>"; };
 		E455D4C956D503125B29E810 /* Pods-Startistic-StartisticUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startistic-StartisticUITests.release.xcconfig"; path = "Target Support Files/Pods-Startistic-StartisticUITests/Pods-Startistic-StartisticUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E59A239CCA26FBBB2111FB0C /* Pods_Startistic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Startistic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -162,6 +166,7 @@
 		373ABE2F257100D300A453C4 /* Startistic */ = {
 			isa = PBXGroup;
 			children = (
+				CEDE14302577F66400918245 /* NewPortfolioPost */,
 				375F390225767FD900322180 /* SignIn */,
 				CE40F6652576983800C16DCF /* SignUp */,
 				375F39082576804A00322180 /* NewOp */,
@@ -247,6 +252,7 @@
 				373ABE662571056900A453C4 /* CardifyModifier.swift */,
 				373ABE832571450E00A453C4 /* NavigationHelper.swift */,
 				373ABE7125711B2C00A453C4 /* StartisticButton.swift */,
+				CEDE142B2577E9E700918245 /* PostView.swift */,
 			);
 			path = "Views and Mods";
 			sourceTree = "<group>";
@@ -300,6 +306,14 @@
 				CE40F67425769D2C00C16DCF /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		CEDE14302577F66400918245 /* NewPortfolioPost */ = {
+			isa = PBXGroup;
+			children = (
+				CEDE14312577F68700918245 /* NewPortfolioPost.swift */,
+			);
+			path = NewPortfolioPost;
 			sourceTree = "<group>";
 		};
 		D7DA2543ED192A3C706CFB58 /* Pods */ = {
@@ -578,12 +592,14 @@
 				CE40F67025769CEC00C16DCF /* Database.swift in Sources */,
 				CEDE14272577D6A900918245 /* SignInViewModel.swift in Sources */,
 				8FB0F6EB25768CBB009C694C /* Activity.swift in Sources */,
+				CEDE142C2577E9E700918245 /* PostView.swift in Sources */,
 				373ABE38257100D300A453C4 /* Startistic.xcdatamodeld in Sources */,
 				373ABE33257100D300A453C4 /* SceneDelegate.swift in Sources */,
 				375F38FB25767C9700322180 /* User.swift in Sources */,
 				373ABE7225711B2C00A453C4 /* StartisticButton.swift in Sources */,
 				373ABEA5257158C800A453C4 /* MyOpsView.swift in Sources */,
 				373ABE9B2571580800A453C4 /* NewOpView.swift in Sources */,
+				CEDE14322577F68700918245 /* NewPortfolioPost.swift in Sources */,
 				373ABE672571056900A453C4 /* CardifyModifier.swift in Sources */,
 				373ABE842571450E00A453C4 /* NavigationHelper.swift in Sources */,
 				CEDE141F2577B33200918245 /* UserProfileViewModel.swift in Sources */,

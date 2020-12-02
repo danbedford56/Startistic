@@ -27,6 +27,8 @@ struct MasterView: View {
             MyOpsView(viewRouter: viewRouter)
         case .signUpPage:
            SignUpView(viewRouter: viewRouter, signUpViewModel: SignUpViewModel())
+        case .newPortfolioPostPage:
+            NewPortfolioPost(viewRouter: viewRouter)
         }
     }
 }

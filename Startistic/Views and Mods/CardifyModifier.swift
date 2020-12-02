@@ -11,9 +11,10 @@ import Foundation
 struct Cardify: AnimatableModifier {
     
     var rotation: Double
-    
+        
     var isFaceUp: Bool {
         rotation < 90
+
     }
     
     var animatableData: Double {
@@ -26,18 +27,19 @@ struct Cardify: AnimatableModifier {
     }
     
     func body(content: Content) -> some View {
+        
            ZStack {
                Group {
                    if isFaceUp {
-                       RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).scaledToFill()
-                       RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth).scaledToFill()
-                       content
+                        RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).scaledToFill()
+                        RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth).scaledToFill()
+                        content
                    }
                
                    else {
-                       RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
-                       RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
-                       content
+                        RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
+                        RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
+                        content
                    }
                }
                

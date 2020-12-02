@@ -16,12 +16,14 @@ enum Page {
     case searchPage
     case myOpsPage
     case signUpPage
+    case newPortfolioPostPage
 }
 
 class ViewRouter: ObservableObject {
     
     @Published var currentPage: Page = .signInPage
     @Published var currentUser: String?
+    @Published var currentID: String? 
 }
 
 struct NavBar : View {

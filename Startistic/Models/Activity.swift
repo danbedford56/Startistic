@@ -15,20 +15,19 @@ struct Activity {
                 posts.append(Post(face_up_content: content[i][0], face_down_content: content[i][1] , id: i))
             }
         }
+    
         struct Post: Identifiable {
             var isFaceUp: Bool = false
             var face_up_content: Any
             var face_down_content: Any
             var id: Int
-            
-            
         }
+    
         mutating func choose(post: Post) {
             let index = posts.firstIndex(matching: post)
             self.posts[index!].isFaceUp = !self.posts[index!].isFaceUp
         }
-        
-
+    
     }
 
     extension Array where Element: Identifiable {

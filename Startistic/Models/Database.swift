@@ -22,9 +22,10 @@ class Database {
 
             dataArray = documents.map { queryDocumentSnapshot -> User in
                 let data = queryDocumentSnapshot.data()
+                let id = queryDocumentSnapshot.documentID
                 let username = data["username"] as? String ?? ""
                 let password = data["password"] as? String ?? ""
-                return User(id: .init(), username: username, password: password)
+                return User(id: id, username: username, password: password)
             }
             completionHandler(dataArray)
         }
