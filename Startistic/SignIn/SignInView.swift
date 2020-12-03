@@ -27,7 +27,7 @@ struct SignInView: View {
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                         .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         Text("Password:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
-                        TextField("Enter your password here...", text: $signInViewModel.password).padding()
+                        SecureField("Enter your password here...", text: $signInViewModel.password).padding()
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                         .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         ZStack {
@@ -41,19 +41,26 @@ struct SignInView: View {
 
                     Group {
                         Button(action: {
-                            let logInHandler:() -> Void = {
-                                viewRouter.currentUser = signInViewModel.username
-                                viewRouter.currentID = signInViewModel.id
-                                viewRouter.currentPage = .userProfilePage
-                            }
-                            signInViewModel.check_login_details(logInHandler: logInHandler)
+                            
+                                let logInHandler:() -> Void = {
+                                    viewRouter.currentUser = signInViewModel.username
+                                    ViewRouter.currentID = signInViewModel.id
+                                    withAnimation(.easeInOut) {
+                                        viewRouter.currentPage = .userProfilePage
+                                    }
+                                }
+                                signInViewModel.check_login_details(logInHandler: logInHandler)
+                            
                         }, label: { Text("Sign In").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
                             .padding(.top, 50)
                         
                         Button(action: {
-                            viewRouter.currentPage = .signUpPage
+                            withAnimation(.easeInOut) {
+                                viewRouter.currentPage = .signUpPage
+                            }
                         }, label: { Text("Sign Up").font(.custom("Philosopher-Regular", size: 25)) })
+                            
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
                             .padding(.top, 50)
                     }

@@ -18,8 +18,10 @@ struct UserProfileView: View {
                 VStack  {
                     HStack {
                         Button(action: {
-                            viewRouter.currentPage = .signInPage
-                            viewRouter.currentUser = nil
+                            withAnimation(.easeInOut) {
+                                viewRouter.currentPage = .signInPage
+                                viewRouter.currentUser = nil
+                            }
                         },
                             label: {
                                 Image(systemName: "arrow.backward.circle.fill")
@@ -29,10 +31,12 @@ struct UserProfileView: View {
                         .padding(.trailing, 110)
                         
                         Button(action: {
-                            viewRouter.currentPage = .newPortfolioPostPage
+                            withAnimation(.easeInOut) {
+                                viewRouter.currentPage = .newPortfolioPostPage
+                            }
                         },
                             label: {
-                                Image(systemName: "plus")
+                                Image(systemName: "plus.circle.fill")
                                     .font(.system(size: iconSize))
                             }
                         )
@@ -49,7 +53,6 @@ struct UserProfileView: View {
                         )
                     }
                     HStack{
-//                        Text("Sign Out").position(x: 40, y: 10).frame(width:400, height: 20)
                         Text("Sign Out")
                             .padding(.trailing, 40)
                         Text("New Portfolio Post")
@@ -58,22 +61,28 @@ struct UserProfileView: View {
                     }
                     .padding(.bottom, 15)
                     
-                    if viewRouter.currentUser != nil {
-                        Text("\(viewRouter.currentUser!)'s Profile").underline().font(.custom("Philosopher-Bold", size: headerFontSize))
+                    HStack {
+                        Image("Startistic-Star")
+                        
+                        if viewRouter.currentUser != nil {
+                            Text("\(viewRouter.currentUser!)'s Profile").underline().font(.custom("Philosopher-Bold", size: headerFontSize))
+                                .padding(.trailing, 40)
+                        }
                     }
                     
-                    ScrollView {
-                        VStack {
-                            ForEach(userProfileViewModel.posts) { post in
-                                PostView(post: post ).padding().onTapGesture {
-                                    withAnimation(.linear) {
-                                        userProfileViewModel.choose(post: post)
+                    if userProfileViewModel.posts != nil {
+                        ScrollView {
+                            VStack {
+                                ForEach(userProfileViewModel.posts!) { post in
+                                    PostView(post: post ).padding().onTapGesture {
+                                        withAnimation(.linear) {
+                                            //userProfileViewModel.choose(post: post)
+                                        }
                                     }
                                 }
                             }
-                        .padding()
-                        }
-                    }.frame(width: 385, height: 550, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        }.frame(width: 385, height: 550, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }
                 }
                 NavBar(viewRouter: viewRouter, yPos: geometry.size.height, xPos: geometry.size.width)
             }
@@ -90,6 +99,6 @@ struct UserProfileView: View {
 
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileView(viewRouter: ViewRouter())
+        UserProfileView(viewRouter: ViewRouter(), userProfileViewModel: UserProfileViewModel())
     }
 }

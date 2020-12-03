@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PostView: View {
-    var post: Activity.Post
+    var post: Post
     
     var body: some View {
         GeometryReader { geometry in
@@ -18,8 +18,7 @@ struct PostView: View {
                         .font(Font.system(size: min(geometry.size.width, geometry.size.height)*fontScaleFactor))
                         .foregroundColor(Color.black)
                         .padding()
-                }
-                else{
+                } else{
                     Text(post.face_down_content as! String)
                         .font(Font.system(size: min(geometry.size.width, geometry.size.height)*fontScaleFactor))
                         .foregroundColor(Color.black)
@@ -27,11 +26,10 @@ struct PostView: View {
                 }
             }.cardify(isFaceUp: post.isFaceUp)
             .transition(AnyTransition.scale)
-        
         }
-        
-        
     }
+    
+    // MARK: Drawing constants
     private let fontScaleFactor: CGFloat = 1.5
 
 }

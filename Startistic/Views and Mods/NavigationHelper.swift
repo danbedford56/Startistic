@@ -23,7 +23,7 @@ class ViewRouter: ObservableObject {
     
     @Published var currentPage: Page = .signInPage
     @Published var currentUser: String?
-    @Published var currentID: String? 
+    static var currentID: String? 
 }
 
 struct NavBar : View {
@@ -37,20 +37,38 @@ struct NavBar : View {
             RoundedRectangle(cornerRadius: 5).fill(LinearGradient(gradient: Gradient(colors: [deepRed, Color.white]), startPoint: .top, endPoint: .bottom)).frame(height: 100)
             HStack {
                 Button(action: {
-                    viewRouter.currentPage = .activityPage
+                    withAnimation(.easeInOut) {
+                        viewRouter.currentPage = .activityPage
+                    }
                 }, label: { Image(systemName: "house.fill").font(.system(size: iconSize)) }).padding(.trailing)
                 Button(action: {
-                    viewRouter.currentPage = .newOpPage
+                    withAnimation(.easeInOut) {
+                        viewRouter.currentPage = .newOpPage
+                    }
                 }, label: { Image(systemName: "plus").font(.system(size: iconSize)) }).padding(.trailing)
                 Button(action: {
-                    viewRouter.currentPage = .searchPage
+                    withAnimation(.easeInOut) {
+                        viewRouter.currentPage = .searchPage
+                    }
                 }, label: { Image(systemName: "magnifyingglass").font(.system(size: iconSize)) }).padding(.trailing)
                 Button(action: {
-                    viewRouter.currentPage = .myOpsPage
+                    withAnimation(.easeInOut) {
+                        viewRouter.currentPage = .myOpsPage
+                    }
                 }, label: { Image(systemName: "note.text").font(.system(size: iconSize)) }).padding(.trailing)
-                Button(action: {
-                    viewRouter.currentPage = .userProfilePage
-                }, label: { Image(systemName: "person.fill").font(.system(size: iconSize)) })
+                if viewRouter.currentPage == .userProfilePage {
+                    Button(action: {
+                        withAnimation(.easeInOut) {
+                            viewRouter.currentPage = .userProfilePage
+                        }
+                    }, label: { Image(systemName: "person.fill").font(.system(size: iconSize)) }).disabled(true)
+                } else {
+                    Button(action: {
+                        withAnimation(.easeInOut) {
+                            viewRouter.currentPage = .userProfilePage
+                        }
+                    }, label: { Image(systemName: "person.fill").font(.system(size: iconSize)) })
+                }
             }
         }
         .position(x: xPos*xMultiplier, y: yPos - 15)

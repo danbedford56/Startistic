@@ -28,11 +28,11 @@ struct SignUpView: View {
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                             .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         Text("Password:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
-                        TextField("Enter your password here...", text: $signUpViewModel.password).padding()
+                        SecureField("Enter your password here...", text: $signUpViewModel.password).padding()
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                             .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         Text("Confirm Password:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
-                        TextField("Enter your password here...", text: $signUpViewModel.confirmed_password).padding()
+                        SecureField("Enter your password here...", text: $signUpViewModel.confirmed_password).padding()
                             .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                             .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         VStack {
@@ -48,19 +48,22 @@ struct SignUpView: View {
                         .padding(.horizontal)
                   Group {
                     Button(action: {
-                        let logInHandler:() -> Void = {
-                            if signUpViewModel.valid_account {
-                                viewRouter.currentPage = .userProfilePage
+                            let logInHandler:() -> Void = {
+                                if signUpViewModel.valid_account {
+                                    withAnimation(.easeInOut) {
+                                        viewRouter.currentPage = .userProfilePage
+                                    }
+                                }
                             }
-                        }
-                        signUpViewModel.create_user(logInHandler: logInHandler)
+                            signUpViewModel.create_user(logInHandler: logInHandler)
                         }, label: { Text("Sign Up").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
                             .padding(.bottom, 25)
                     Text("Already have an account?").frame(width: textFrameWidth, height: textFrameHeight, alignment: .center)
                     Button(action: {
-                        print("Sign In")
-                        viewRouter.currentPage = .signInPage
+                        withAnimation(.easeInOut) {
+                            viewRouter.currentPage = .signInPage
+                        }
                     }, label: { Text("Sign In").font(.custom("Philosopher-Regular", size: 25)) })
                         .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
                   }

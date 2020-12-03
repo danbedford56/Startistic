@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewPortfolioPost: View {
+struct NewPortfolioPostView: View {
     @StateObject var viewRouter: ViewRouter
     @State var PortfolioPostTitle : String = ""
     @State var PortfolioPostContent : String = ""
@@ -16,8 +16,10 @@ struct NewPortfolioPost: View {
         GeometryReader { geometry in
             ZStack (alignment: .top){
                 VStack {
-                    Text("New Portfolio Post").underline().font(.custom("Philosopher-Bold", size: headerFontSize)).padding()
-                    Text("Post").underline().font(.custom("Philosopher-Bold", size: bodyFontSize))
+                    HStack {
+                        Image("Startistic-Star")
+                        Text("New Portfolio Post").underline().font(.custom("Philosopher-Bold", size: headerFontSize)).padding()
+                    }
                     Group {
                         Text("Title:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
                             TextField("Enter the title of your post here...", text: $PortfolioPostTitle).padding()
@@ -67,6 +69,6 @@ struct NewPortfolioPost: View {
 
 struct NewPortfolioPost_Previews: PreviewProvider {
     static var previews: some View {
-        NewPortfolioPost(viewRouter: ViewRouter())
+        NewPortfolioPostView(viewRouter: ViewRouter())
     }
 }

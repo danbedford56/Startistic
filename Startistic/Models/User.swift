@@ -12,3 +12,10 @@ struct User: Identifiable {
     var username: String
     var password: String
 }
+
+struct Portfolio: Identifiable {
+    
+    var id: String
+    var user_id: String
+    var post: String
+}
