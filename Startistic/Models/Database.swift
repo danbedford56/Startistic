@@ -21,10 +21,42 @@ class Database {
 
             dataArray = documents.map { queryDocumentSnapshot -> User in
                 let data = queryDocumentSnapshot.data()
+                let id = queryDocumentSnapshot.documentID
                 let username = data["username"] as? String ?? ""
-                return User(id: .init(), username: username)
+                let password = data["password"] as? String ?? ""
+                return User(id: id, username: username, password: password)
             }
             completionHandler(dataArray)
+        }
+    }
+    
+    static func fetch_portfolios(completionHandler: @escaping (_ data: Array<Portfolio>) -> ()) {
+        var dataArray: Array<Portfolio> = []
+        
+        db.collection("portfolios").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+
+            dataArray = documents.map { queryDocumentSnapshot -> Portfolio in
+                let data = queryDocumentSnapshot.data()
+                let id = queryDocumentSnapshot.documentID
+                let user_id = data["user_id"] as? String ?? ""
+                let post = data["post1"] as? String ?? ""
+                return Portfolio(id: id, user_id: user_id, post: post)
+            }
+            completionHandler(dataArray)
+        }
+    }
+    
+    static func get_portfolio(user_id: String, completionHandler: @escaping (_ data: Portfolio) -> ()) {
+        fetch_portfolios() { dataArray in
+            for portfolio in dataArray {
+                if portfolio.user_id == user_id {
+                    completionHandler(portfolio)
+                }
+            }
         }
     }
     

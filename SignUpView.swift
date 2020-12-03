@@ -21,28 +21,33 @@ struct SignUpView: View {
             ZStack {
                 Color.white
                 VStack {
-                    Image("Logo").padding(.bottom, 50)
-                    Text("Sign Up").underline().padding(.vertical).font(.custom("Philosopher-Bold", size: headerFontSize))
+                    Image("Logo").padding(.bottom, 25)
+                    Text("Sign Up").underline().padding(.top, 5).font(.custom("Philosopher-Bold", size: headerFontSize))
                     Group {
                         Text("Username:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
                         TextField("Enter your username here...", text: $signUpViewModel.username).padding()
                           .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                 .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         Text("Password:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
-                        TextField("Enter your password here...", text: $signUpViewModel.password).padding()
+                        SecureField("Enter your password here...", text: $signUpViewModel.password).padding()
                           .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                 .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         Text("Confirm Password:").frame(width: textFrameWidth, height: textFrameHeight, alignment: .leading)
-                        TextField("Enter your password here...", text: $signUpViewModel.confirmed_password).padding()
+                        SecureField("Enter your password here...", text: $signUpViewModel.confirmed_password).padding()
                           .overlay(RoundedRectangle.init(cornerRadius: textboxRoundedRectangleCornerRadius)
                                 .stroke(lineWidth: textboxRoundedRectangleLineWidth))
                         
-                        if signUpViewModel.unmatched {
-                            Text("Passwords do not match")
-                        }
-                        if signUpViewModel.username_taken {
-                            Text("This username is already taken")
-                        }
+                        VStack{
+                            
+                            if signUpViewModel.unmatched {
+                                Text("Passwords do not match")
+                            }
+                            if signUpViewModel.username_taken {
+                                Text("This username is already taken")
+                            }
+                        }.frame(width: 370, height: 100, alignment: .top).padding(5)
+                        
+                        
                     }
                         .padding(.horizontal)
                     Group {
@@ -55,7 +60,6 @@ struct SignUpView: View {
                             signUpViewModel.create_user(logInHandler: logInHandler)
                         }, label: { Text("Sign Up").font(.custom("Philosopher-Regular", size: 25)) })
                             .buttonStyle(StartisticButtonStyle(bgColor: deepRed))
-                            .padding(.top, 50)
                             .padding(.bottom, 25)
                         Text("Already have an account?").frame(width: textFrameWidth, height: textFrameHeight, alignment: .center)
                         Button(action: {

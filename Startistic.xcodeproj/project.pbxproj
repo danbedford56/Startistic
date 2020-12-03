@@ -39,6 +39,11 @@
 		8FB0F6E2257688DC009C694C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FB0F6E0257688DC009C694C /* GoogleService-Info.plist */; };
 		8FB0F6E3257688DC009C694C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FB0F6E0257688DC009C694C /* GoogleService-Info.plist */; };
 		8FB0F6EB25768CBB009C694C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB0F6EA25768CBB009C694C /* Activity.swift */; };
+		8FB706602577D6E7008710F2 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB7065F2577D6E7008710F2 /* SigninViewModel.swift */; };
+		8FB706652577E6F7008710F2 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB706642577E6F7008710F2 /* UserProfileViewModel.swift */; };
+		8FB7066A2577E9E1008710F2 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB706692577E9E1008710F2 /* PostView.swift */; };
+		8FBBFE112578ECC70002B657 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBFE102578ECC60002B657 /* Post.swift */; };
+		8FBBFE1A2578F3360002B657 /* NewPortfolioPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBFE192578F3360002B657 /* NewPortfolioPostView.swift */; };
 		9A60FCC83E5797D80D1DB033 /* Pods_StartisticTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9099B9B3EE30BEB4EAFA854 /* Pods_StartisticTests.framework */; };
 		C89D3612E2F5402034ADE427 /* Pods_Startistic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59A239CCA26FBBB2111FB0C /* Pods_Startistic.framework */; };
 /* End PBXBuildFile section */
@@ -100,6 +105,11 @@
 		6A6E7E653A13E31CAFFE6AC4 /* Pods-StartisticTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartisticTests.release.xcconfig"; path = "Target Support Files/Pods-StartisticTests/Pods-StartisticTests.release.xcconfig"; sourceTree = "<group>"; };
 		8FB0F6E0257688DC009C694C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FB0F6EA25768CBB009C694C /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = ../Models/Activity.swift; sourceTree = "<group>"; };
+		8FB7065F2577D6E7008710F2 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
+		8FB706642577E6F7008710F2 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		8FB706692577E9E1008710F2 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		8FBBFE102578ECC60002B657 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		8FBBFE192578F3360002B657 /* NewPortfolioPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPortfolioPostView.swift; sourceTree = "<group>"; };
 		AA812637166BBB9FD2B81124 /* Pods-Startistic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startistic.debug.xcconfig"; path = "Target Support Files/Pods-Startistic/Pods-Startistic.debug.xcconfig"; sourceTree = "<group>"; };
 		B9099B9B3EE30BEB4EAFA854 /* Pods_StartisticTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StartisticTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3A464D7C4D1C925DF5BF2D /* Pods-StartisticTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartisticTests.debug.xcconfig"; path = "Target Support Files/Pods-StartisticTests/Pods-StartisticTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 		373ABE2F257100D300A453C4 /* Startistic */ = {
 			isa = PBXGroup;
 			children = (
+				8FBBFE182578F2FB0002B657 /* NewPortfolioPost */,
 				3709522025769F0000F308A2 /* SignUp */,
 				375F39082576804A00322180 /* NewOp */,
 				375F39072576803700322180 /* MyOps */,
@@ -243,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				373ABE34257100D300A453C4 /* SignInView.swift */,
+				8FB7065F2577D6E7008710F2 /* SigninViewModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -253,6 +265,7 @@
 				373ABE662571056900A453C4 /* CardifyModifier.swift */,
 				373ABE832571450E00A453C4 /* NavigationHelper.swift */,
 				373ABE7125711B2C00A453C4 /* StartisticButton.swift */,
+				8FB706692577E9E1008710F2 /* PostView.swift */,
 			);
 			path = "Views and Mods";
 			sourceTree = "<group>";
@@ -270,6 +283,7 @@
 			children = (
 				375F38FA25767C9700322180 /* User.swift */,
 				3709522E2576A0EC00F308A2 /* Database.swift */,
+				8FBBFE102578ECC60002B657 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				373ABE7925713F3C00A453C4 /* UserProfileView.swift */,
+				8FB706642577E6F7008710F2 /* UserProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -296,6 +311,14 @@
 				373ABE9A2571580800A453C4 /* NewOpView.swift */,
 			);
 			path = NewOp;
+			sourceTree = "<group>";
+		};
+		8FBBFE182578F2FB0002B657 /* NewPortfolioPost */ = {
+			isa = PBXGroup;
+			children = (
+				8FBBFE192578F3360002B657 /* NewPortfolioPostView.swift */,
+			);
+			path = NewPortfolioPost;
 			sourceTree = "<group>";
 		};
 		D7DA2543ED192A3C706CFB58 /* Pods */ = {
@@ -572,16 +595,21 @@
 				373ABE7F2571445C00A453C4 /* MasterView.swift in Sources */,
 				3709522A2576A0A000F308A2 /* SignUpViewModel.swift in Sources */,
 				373ABE96257157C600A453C4 /* ActivityView.swift in Sources */,
+				8FBBFE112578ECC70002B657 /* Post.swift in Sources */,
 				373ABEA02571586200A453C4 /* SearchView.swift in Sources */,
 				8FB0F6EB25768CBB009C694C /* Activity.swift in Sources */,
 				373ABE38257100D300A453C4 /* Startistic.xcdatamodeld in Sources */,
 				373ABE33257100D300A453C4 /* SceneDelegate.swift in Sources */,
+				8FB7066A2577E9E1008710F2 /* PostView.swift in Sources */,
 				375F38FB25767C9700322180 /* User.swift in Sources */,
 				373ABE7225711B2C00A453C4 /* StartisticButton.swift in Sources */,
+				8FB706602577D6E7008710F2 /* SigninViewModel.swift in Sources */,
+				8FBBFE1A2578F3360002B657 /* NewPortfolioPostView.swift in Sources */,
 				373ABEA5257158C800A453C4 /* MyOpsView.swift in Sources */,
 				3709522225769F1500F308A2 /* SignUpView.swift in Sources */,
 				373ABE9B2571580800A453C4 /* NewOpView.swift in Sources */,
 				373ABE672571056900A453C4 /* CardifyModifier.swift in Sources */,
+				8FB706652577E6F7008710F2 /* UserProfileViewModel.swift in Sources */,
 				373ABE842571450E00A453C4 /* NavigationHelper.swift in Sources */,
 				3709522F2576A0EC00F308A2 /* Database.swift in Sources */,
 				373ABE35257100D300A453C4 /* SignInView.swift in Sources */,

@@ -13,9 +13,12 @@ struct MasterView: View {
     var body: some View {
         switch viewRouter.currentPage {
         case .signInPage:
-            SignInView(viewRouter: viewRouter)
+            SignInView(signInViewModel: SignInViewModel(), viewRouter: viewRouter)
         case .userProfilePage:
-            UserProfileView(viewRouter: viewRouter)
+                    let view = UserProfileView(viewRouter: viewRouter, userProfileViewModel: UserProfileViewModel())
+                    view.onAppear{
+                        view.userProfileViewModel.get_posts()
+                    }
         case .activityPage:
             ActivityView(viewRouter: viewRouter)
         case .newOpPage:
@@ -26,6 +29,8 @@ struct MasterView: View {
             MyOpsView(viewRouter: viewRouter)
         case .signUpPage:
             SignUpView(signUpViewModel: SignUpViewModel(), viewRouter: viewRouter)
+        case .newPortfolioPostPage:
+            NewPortfolioPost(viewRouter: viewRouter)
         }
     }
 }

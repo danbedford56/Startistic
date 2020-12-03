@@ -9,19 +9,13 @@ import Foundation
 
 
 class ActivityViewModel: ObservableObject {
-    @Published private var model: Activity = ActivityViewModel.createActivity()
     
-    private static func createActivity() -> Activity {
-        let content = [["front","back"], ["front2", "back2"],["front3", "back3"],["front4", "back4"],["front5", "back5"],["front5", "back5"],["front5", "back5"],["front5", "back5"],["front5", "back5"],["front5", "back5"],["front5", "back5"],["front5", "back5"]]
-        return Activity(num_of_posts: content.count, content: content)
-    }
     
-    var posts: Array<Activity.Post> {
-        model.posts
-    }
+    @Published var posts: Array<Post>? = [Post(face_up_content: "HI", face_down_content: "Hello", id: 1),Post(face_up_content: "HI", face_down_content: "Hello", id: 2),Post(face_up_content: "HI", face_down_content: "Hello", id: 3),]
     
-    func choose(post: Activity.Post) {
-        model.choose(post: post)
-        
+    func choose(post: Post) {
+        let index = posts!.firstIndex(matching: post)
+        self.posts![index!].isFaceUp = !self.posts![index!].isFaceUp
     }
 }
+
